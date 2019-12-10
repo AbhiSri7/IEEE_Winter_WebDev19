@@ -1,0 +1,55 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	background: url(background.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: sans-serif;
+}
+
+.loginbox
+{
+	width: 320px;
+	height: 460px;
+	background: #98AFC7;
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 35px 70px;
+}
+
+.logo
+{
+	width: 140px;
+	height: 115px;
+	position: absolute;
+	top: -55px;
+	left: 90px;
+	border-radius: 50%
+}
+
+p
+{
+	display: inline;
+}
+
+.round
+{
+	border-radius: 10px;
+	border: 2px solid #4863A0;
+	width: 185px;
+	height: 30px;
+}
+
+.footer
+{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+}
