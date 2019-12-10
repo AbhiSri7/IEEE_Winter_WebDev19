@@ -1,0 +1,42 @@
+body{
+    margin: 30px;
+}
+
+header{
+    font-variant: small-caps;
+    font-size: 150%;
+    float: left;
+    background: white;
+}
+
+h3{
+    font-size: 150%;
+}
+div{
+    display: inline-block;
+    width: 30%;
+    height: 210px;
+    margin: 0.5%;
+}
+main{
+    background: rgb(183, 229, 230);
+}
+
+footer{
+    clear: both;
+}
+
+input[type='text'],select,input[type='number']
+{
+     border:2px solid rgb(173, 197, 240);
+     padding: 5px 12px 5px 12px;
+     border-radius:6px;
+}       
+input[type='submit']
+{
+   margin-left:150px;      
+}
+
+
+
+
