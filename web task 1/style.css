@@ -1,0 +1,97 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(bg.jpg) no repeat;
+  background-color: violet;
+  background-size: cover;
+}
+.login-box{
+  width: 280px;
+  position: absolute;
+  top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+color: white;
+}
+.login-box h1{
+  float: absolute;
+  font-size: 50px;
+  border-bottom: 6px solid #4caf50;
+  margin-bottom: 50px;
+  padding: 13px 0
+}
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #4caf50;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: yellow;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+.textbox select{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+.btn{
+  width: 100%;
+  background: none;
+  border: 10px solid yellow;
+
+}
+.vertical-menu {
+  width: 100%;
+  outline: none;
+  border: none;
+  color: yellow;
+  font-size: 18px;
+  height: 70px;
+  overflow-y: auto;
+  margin: 0 10px;
+  border-bottom: 1px solid #4caf50
+}
+
+.vertical-menu select {
+  background-color: blue;
+  color: #4caf50;
+  display: block;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 7px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.vertical-menu select:hover {
+  background-color: blue;
+  color: white;
+  font-size: 18px;
+  outline: none;
+  border: none;
+}
+
+.vertical-menu select.active {
+  background-color: #4CAF50;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+}
