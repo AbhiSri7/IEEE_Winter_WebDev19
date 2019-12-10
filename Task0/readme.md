@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Praseedha Praveen Kalbhavi
 =======
 P Rohan. 
@@ -10,3 +11,7 @@ P Rohan.
 Harsh Ranjan
 Mini 
 >>>>>>> d14441dc442732f94c017440c16b44268fb7a12b
+=======
+﻿P ROHAN 
+I just want to explore front end web development.
+>>>>>>> af95623f7b9c890d30335e35a2ef6660939e3ded
