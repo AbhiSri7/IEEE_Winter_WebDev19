@@ -1,0 +1,263 @@
+<html>
+<head>
+<title>TO-DO LIST</title>
+</head>
+<style>
+
+body 
+{
+  margin: 0;
+  min-width: 250px;
+}
+
+
+*
+ {
+  box-sizing: border-box;
+}
+
+.to-do
+{
+   float:left;
+   width:46%;
+   text-align:centre;
+}
+
+.completed
+{
+  float:right;
+  width:46%;
+  text-align:centre;
+}
+
+ul 
+{
+  margin: 0;
+  padding: 0;
+}
+
+
+ul li 
+{
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+
+ul li:hover 
+{
+  background: #ddd;
+}
+
+
+ul li.checked 
+{
+  background: #888;
+  color: #fff;
+}
+
+
+ul li.checked::before 
+{
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+
+.close 
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+h1, h2 
+{
+  margin:0;
+  text-align:center;
+  text-transform:uppercase;
+  padding:20px;
+}
+
+h2 
+{
+  font-size:20px;
+  text-align:center;
+  border-bottom:1px solid #b1c9bb;
+  padding: 0 0 10px;
+  color:#57635c;
+    
+}
+
+.header 
+{
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+.header:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input 
+{
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+.buttons
+{
+  padding: 5px;
+  width: 20%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0; 
+  width:20%;
+}
+
+
+.addButton
+ {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2 >My To Do List</h2>
+  <input type="text" id="Input" placeholder="Task Name....">
+  <span onclick="newElement()" class="addButton">Add</span>
+</div>
+
+<div class="to-do">
+  
+    <h2>Incomplete Tasks</h2>
+    <ul id="UL1">
+      <div class="todolist">
+      </div>
+    </ul>
+  
+</div>
+  
+<div class="completed">
+    
+    <h2>Completed Tasks</h2>
+    <ul id="UL2">
+
+    </ul>
+</div>
+
+<script>
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++)
+{
+  close[i].onclick = function() 
+ {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+//Click on a Done button to indicate the task has been done 
+document.addEventListener("click", function () {
+   
+    var buttons = document.querySelectorAll(".Buttons");
+    var list1 = document.getElementById("UL1");
+    var list2 = document.getElementById("UL2");
+
+    function moveItem(e) 
+   {
+        var moveTo = this.parentElement.parentElement == list1 ? list2 : list1;
+       
+        moveTo.appendChild(this.parentElement);
+    }
+
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", moveItem);
+    }
+	
+},false);  
+
+
+function newElement() 
+{
+  var listitem = document.createElement("li");
+  var inputValue = document.getElementById("Input").value;
+  var txt = document.createTextNode(inputValue);
+  var button=document.createElement("input");
+  button.type="button";
+  button.value="Done";
+  button.className="Buttons"
+  listitem.appendChild(txt);
+  listitem.insertBefore(button,listitem.childNodes[0]);
+  if(inputValue ==='')
+  {
+      alert("You must write Something");
+  }
+  else
+  {
+       document.getElementById("UL1").appendChild(listitem);
+  }
+  document.getElementById("Input").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7"); //Get the unicode value of the multiplication sign
+  span.className = "close";
+  span.appendChild(txt);
+  listitem.appendChild(span);
+
+  for (i = 0; i < close.length; i++) 
+ {
+    close[i].onclick = function() 
+   {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
