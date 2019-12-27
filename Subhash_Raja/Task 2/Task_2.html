@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IEEE Winter Task 1</title>
+<img src="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/67831982_10157231656006257_6568770669524287488_n.jpg?_nc_cat=111&_nc_ohc=2jppBpscc_EAQlt8l8NyBUeqo0ucYNxKLDuCDyW93xr6p3aTDc510JLjA&_nc_ht=scontent-bom1-2.xx&oh=69b9bba66b1a38ea45cea880e36d2b0b&oe=5E75E009" alt="IEEE Logo" width="10%">
+<br>
+</head>
+<script>
+function check()
+{
+     var e=document.getElementById("college").value;
+if(e=='MIT')
+{
+     document.getElementById("divs").style.display='block';
+}
+else
+{
+    document.getElementById("divs").style.display='none';
+}
+}
+</script>
+<style>
+body
+{
+      background:rgb(183, 229, 230);
+      background-size:100% 100%;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+}
+h2
+{
+     text-align:center;
+     font-size:50px;
+}
+h3
+{ 
+    text-align:bottom;
+    margin-right:40px;
+    margin-top: 400px;
+    margin-bottom:400px;
+}
+form
+{
+    margin: 0 auto;
+    width: 400px;
+    padding: 16px;
+    border: 2px  solid black;
+    border-radius: 16px;
+}
+#specific
+{
+     width:90%;
+     border:1px  solid  rgb(72, 70, 57);
+     padding: 7px 5px 5px 5px;
+     border-radius:4px;
+     font-size:19px;
+}  
+#registration
+{
+     width:60%;
+     border:1px  solid  rgb(72, 70, 57);
+     padding: 7px 5px 5px 5px;
+     border-radius:4px;
+     font-size:19px;
+}
+#sem
+{
+     width=90%;
+     border:1px  solid  rgb(72, 70, 57);
+     padding: 7px 5px 5px 5px;
+     border-radius:4px;
+     font-size:19px;
+}     
+input[type='submit']
+{
+   margin-left:150px;      
+}
+img
+{
+     font-size:150%;
+     float:left;
+     margin-left:100px;
+}
+#divs
+{
+     display: none;
+}
+#college
+{
+    width:90%;
+     border:1px  solid  rgb(72, 70, 57);
+     padding: 7px 5px 5px 5px;
+     border-radius:4px;
+     font-size:19px;
+}
+</style>
+<body>
+<br><br><br><br><br><br><br>
+<h2><u>IEEE Winter Task 1</u></h2>
+
+<form name="Myform" action="https://github.com/AbhiSri7/IEEE_Winter_WebDev"  target="_blank" method="post">
+<b>Full Name:</b>
+<input type='text' name:'Name' id='specific'>
+<br>
+<b>College:</b>
+<select id="college" onchange="check()">
+<option value="Please Select College">Please Select College</option>
+<option value="MIT">MIT</option>
+<option value="KMC">KMC</option>
+<option value="T.M Pai Institute of Management">T.M Pai Institute of Management</option>
+</select>
+<div id='divs'>
+<b>Registration Number</b>
+<input type='number' name="reg" id="registration">
+</div>
+<div id='semester'>
+<b>Semester:</b>
+<br>
+ <input type="number"  max="8" min="1" step="1" value="1" id="sem" >
+</div>
+<br>
+<br>
+<input type='submit' name:'Submit'>
+</form>
+<hr>
+<hr>
+<h3>Designed by: Subhash Raja<br>Whatsapp no: 9731017888<br>Github Id: subhash1612<br>
+<i>Please contact us in case of any queries or discrepancies</i></h3>
+</body>
+</html>
