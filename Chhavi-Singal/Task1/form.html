@@ -5,8 +5,22 @@
     <title>Winter Form</title>
     <link rel="icon" type="img/jpg" href="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/67831982_10157231656006257_6568770669524287488_n.jpg?_nc_cat=111&_nc_ohc=2jppBpscc_EAQlt8l8NyBUeqo0ucYNxKLDuCDyW93xr6p3aTDc510JLjA&_nc_ht=scontent-bom1-2.xx&oh=69b9bba66b1a38ea45cea880e36d2b0b&oe=5E75E009">
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        function regNo(){
+            if(document.getElementById('college').value=="Manipal Institute of Technology"){
+                document.getElementById('reg').style.display="inline";
+                document.getElementById('reg').setAttribute('required',true);
+             }
+            else{
+                document.getElementById('reg').style.display="none";
+                document.getElementById('reg').removeAttribute('required');
+            }
+        }
+    </script>
 </head>
 <body>
+
     <header>
         <img src="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/67831982_10157231656006257_6568770669524287488_n.jpg?_nc_cat=111&_nc_ohc=2jppBpscc_EAQlt8l8NyBUeqo0ucYNxKLDuCDyW93xr6p3aTDc510JLjA&_nc_ht=scontent-bom1-2.xx&oh=69b9bba66b1a38ea45cea880e36d2b0b&oe=5E75E009" alt="IEEE Logo"
         width="10%">
@@ -27,9 +41,9 @@
             <h4>Name:</h4>
             <input type="text" name="Name"><br>
             <h4>College:</h4>
-            <select name="College" size="1">
-                <option value="Manipal Institute of Technology" selected>Manipal Institute of Technology</option>
-                <option value="Kasturba Medical College">Kasturba Medical College</option>
+            <select name="College" size="1" id="college" onchange="regNo()">
+                <option value="Manipal Institute of Technology">Manipal Institute of Technology</option>
+                <option value="Kasturba Medical College" selected>Kasturba Medical College</option>
                 <option value="Manipal Center for Information Science">Manipal Center for Information Science</option>
                 <option value="Manipal Centre for European Studies">Manipal Centre for European Studies</option>
                 <option value="Manipal Centre for Philosophy and Humanities">Manipal Centre for Philosophy and Humanities</option>
@@ -41,8 +55,8 @@
                 <option value="Manipal Life Sciences Centre">Manipal Life Sciences Centre</option>
                 <option value="Welcomgroup Graduate School of Hotel Administration">Welcomgroup Graduate School of Hotel Administration</option>
             </select><br><br>
-            <h4>Registration Number:</h4>
-            <input type="number" name="Registration Number"><br>
+            <div id="reg" style="display: none"><h4>Registration Number:</h4>
+            <input type="number" name="Registration Number"><br></div>
             <h4>Semester:</h4>
             <input type="number" max="10" min="1" step="1" value="1" name="Semester"><br><br>
             <button type="submit">SUBMIT</button>
