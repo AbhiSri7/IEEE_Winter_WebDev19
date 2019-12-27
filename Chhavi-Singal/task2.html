@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>To-Do List</title>
+        <link rel="icon" type="img/jpg" href="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/67831982_10157231656006257_6568770669524287488_n.jpg?_nc_cat=111&_nc_ohc=2jppBpscc_EAQlt8l8NyBUeqo0ucYNxKLDuCDyW93xr6p3aTDc510JLjA&_nc_ht=scontent-bom1-2.xx&oh=69b9bba66b1a38ea45cea880e36d2b0b&oe=5E75E009">
+        <style>
+            body{
+                margin: 20px;
+                background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,h_1111,w_1975,x_0,y_0/f_auto,q_auto,w_1100/v1554993537/shape/mentalfloss/istock-612398826.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            h1{
+                background-color: rgb(8, 30, 88);
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 10px;
+                display: inline;
+                color: white;
+
+            }
+            .Buttons,button{
+                background-color: rgb(104, 235, 86);
+                border: 1px solid black;
+                padding: 5px;
+                border-radius: 5px;
+                opacity: 0.85;
+                margin: 5px;
+                cursor: pointer;
+            }
+            .Buttons:hover,button:hover{
+                opacity: 1;
+            }
+            .Buttons{
+                background-color: rgb(213, 235, 86);
+                margin: 2% 10%;
+            }
+            button{
+                float: bottom;
+            }
+            .deleteTask{
+                margin: 3% 5%;
+                float: right;
+            }
+            .deleteTask:hover{
+                cursor: pointer; 
+            }
+            div{
+                display: inline-block;
+                margin: 3%;
+                padding: 2%;
+                border: 4px solid black;
+                float: left;
+                background-color: white;
+                border-radius: 10px;
+                width: 37%;
+                opacity: 0.9;
+            }
+            ul{
+                padding: 2%;
+                margin: 2%;
+                margin-left: 0%;
+                font-size: 150%;
+                list-style-type: none;
+            }
+            ul li{
+                padding: 2%;
+                border: 1px solid black;
+                
+            }
+            ul li:hover{
+                background-color: rgb(177, 203, 228);
+            }
+            #tasks{
+                float: left;
+            }
+            #completed{
+                float: right;
+            }
+        
+
+        </style>
+        
+    </head>
+    <body>
+        <div id="tasks">
+            <h1>Tasks to complete</h1><br><br><hr>
+            <ul id="todo">
+            </ul>
+            <button type="button" onclick="addTask()">Add Task</button>
+            
+        </div>
+        <div id="completed">
+            <h1> Tasks Completed </h1><br><br><hr>
+            <ul id="done">
+            </ul>
+        </div>
+
+        <script>
+            
+           function addTask(){
+               var task=prompt('Enter your task');
+               var x=document.createElement('li');
+               var text=document.createTextNode(task);
+               var doneButton=document.createElement('input');
+               doneButton.type="button";
+               doneButton.value="Complete";
+               doneButton.className="Buttons";
+               x.appendChild(text);
+               x.appendChild(doneButton);
+               if(task===""){
+                   alert("Please enter a task");
+               }
+               else{
+                   document.getElementById("todo").appendChild(x);
+               }
+               var remove=document.createElement("span");
+               var y=document.createTextNode("\u00D7");
+               remove.className="deleteTask";
+               remove.appendChild(y);
+               x.appendChild(remove);
+               var deleteTask=document.getElementsByClassName("deleteTask");
+               for(var i=0;i<deleteTask.length;i++){
+                   deleteTask[i].onclick=function(){
+                       this.parentElement.style.display="none";
+                   }
+               }
+               
+           }
+           //To delete the tasks
+           var remove=document.getElementsByClassName("deleteTask");
+           for(var i=0; i<remove.length; i++){
+               remove[i].onclick = function(){
+                   this.parentElement.style.display="none";
+               }
+           }
+           //To complete the tasks
+           document.addEventListener("click",function(){
+               var a=document.querySelectorAll(".Buttons");
+               var done=document.getElementById("done");
+               function completeTask(){
+                   done.appendChild(this.parentElement);
+                   this.parentElement.removeChild(this);
+               }
+               for(var i=0;i<a.length;i++){
+                   a[i].addEventListener("click",completeTask);
+               }
+           });
+  
+       </script>
+    </body>
+</html>
