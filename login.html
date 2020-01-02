@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<title>
+Fly Infinity
+</title>
+<head>
+<style>
+*
+{
+margin: 0;
+padding: 0;
+}
+header
+{
+background-image:linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 1))url(back.png);
+height: 100vh;
+background-size: cover;
+background-position: center;
+}
+.nav-bar
+{
+background: rgb(0, 0, 0, 1);
+height: 80px;
+}
+.logo
+{
+margin: 10px 50px;
+height: 60px;
+}
+.menu
+{
+float: right;
+list-style: none;
+margin: 20px;
+}
+.menu li{
+display: inline-block;
+margin: 10px 5px;
+}
+.menu li a{
+text-decoration: none;
+color: #fff;
+padding: 5px 10px;
+font-family: sans-serif;
+letter-spacing: 2px;
+border: 1px solid #fff;
+}
+.menu li a:hover{
+background: #fff;
+transition: .4s;
+color: #000;
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  
+}
+.container {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 500px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="sticky">
+<div class="nav-bar">
+<ul class="menu">
+<li><a href="Fly.html">About</a></li>
+<li><a href="Contacts.html">Contact Details</a></li>
+<li><a href="flights.html">Flight Details</a></li>
+<li><a href="login.html">Login</a></li>
+</ul>
+</div>
+</div>
+<br>
+<br>
+<form action="/action_page.php">
+  Date:
+  <input type="date" name="bday" id="date">
+</form>
+<br>
+<br>
+
+
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+<div class="row">
+      <div class="col-25">
+        <label for="Stop">Departure:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="stop" name="lastname" placeholder="Departure...">
+      </div>
+     </div>
+<div class="row">
+      <div class="col-25">
+        <label for="Start">Arrival:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="start" name="lastname" placeholder="Arrival...">
+      </div>
+    </div>
+
+    
+    
+<div class="row">
+      <div class="col-25">
+        <label for="country">Country:</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+<option value="india">India</option>
+        </select>
+      </div>
+    </div>
+<div class="row">
+      <div class="col-25">
+        <label for="Start">No. of seats:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="seats" name="lastname" placeholder="No. of seats...">
+      </div>
+    </div>
+    
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+const date = document.getElementById('date');
+    	const fname = document.getElementById('fname');
+        const lname = document.getElementById('lname');
+        const stop = document.getElementById('stop');
+        const start = document.getElementById('start');
+        const country = document.getElementById('country');
+const seats = document.getElementById('seats');
+
+        
+        // This variable stores all the data.
+        let data = 
+            '\r Date: ' + date.value + ' \r\n ' + 
+            'fName: ' + fname.value + ' \r\n ' + 
+            'lName: ' + lname.value + ' \r\n ' + 
+            'Stop : ' +stop.value + ' \r\n ' + 
+            'Start: ' + start.value + ' \r\n ' + 
+            'Country: ' + country.value + ' \r\n ' + 
+            'Seats: ' + seats.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>

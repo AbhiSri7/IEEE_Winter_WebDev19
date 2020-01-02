@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<title>
+Fly Infinity
+</title>
+<head>
+<style>
+*
+{
+margin: 0;
+padding: 0;
+}
+header
+{
+background-image:linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 1))url(back.png);
+height: 100vh;
+background-size: cover;
+background-position: center;
+}
+.nav-bar
+{
+background: rgb(0, 0, 0, 1);
+height: 80px;
+}
+.logo
+{
+margin: 10px 50px;
+height: 60px;
+}
+.menu
+{
+float: right;
+list-style: none;
+margin: 20px;
+}
+.menu li{
+display: inline-block;
+margin: 10px 5px;
+}
+.menu li a{
+text-decoration: none;
+color: #fff;
+padding: 5px 10px;
+font-family: sans-serif;
+letter-spacing: 2px;
+border: 1px solid #fff;
+}
+.menu li a:hover{
+background: #fff;
+transition: .4s;
+color: #000;
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  
+}
+.container {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 500px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="sticky">
+<div class="nav-bar">
+<ul class="menu">
+<li><a href="Fly.html">About</a></li>
+<li><a href="Contacts.html">Contact Details</a></li>
+<li><a href="flights.html">Flight Details</a></li>
+<li><a href="login.html">Login</a></li>
+</ul>
+</div>
+</div>
+
+
+<!-- Slide Show -->
+<section>
+
+   
+   <img class="mySlides" src="logo1.png"
+  style="width:100%">
+
+
+   <img class="mySlides" src="2.jpg"
+  style="width:100%">
+
+
+
+   <img class="mySlides" src="3.jpeg"
+  style="width:100%">
+
+   <img class="mySlides" src="9.jpg"
+  style="width:100%">
+
+   <img class="mySlides" src="6.jpg"
+  style="width:100%">
+
+  
+</section>
+  
+
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
